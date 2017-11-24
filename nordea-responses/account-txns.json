@@ -1,0 +1,405 @@
+{
+  "groupHeader": {
+    "messageIdentification": "SUHom9u6UWE",
+    "creationDateTime": "2017-11-24T20:28:58.451Z",
+    "httpCode": 200
+  },
+  "response": {
+    "_continuationKey": "0220161114561089-2",
+    "transactions": [
+      {
+        "_type": "CreditTransaction",
+        "transactionId": "0220161114561089",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Pano",
+        "amount": "11.02",
+        "debtorName": "Firma OY"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114561058",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Korttiosto",
+        "amount": "-8.75",
+        "creditorName": "K market Metsäkulma"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114560965",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Korttiosto",
+        "amount": "-36.16",
+        "creditorName": "Stockmann Oyj Abp"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114560903",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Itsepalvelu",
+        "amount": "-0.15",
+        "creditorName": "Ville Virtanen"
+      },
+      {
+        "_type": "CreditTransaction",
+        "transactionId": "0220161114560872",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Pano",
+        "amount": "12.47",
+        "debtorName": "Firma OY"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114560841",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Korttiosto",
+        "amount": "-6.65",
+        "creditorName": "K market Metsäkulma"
+      },
+      {
+        "_type": "CreditTransaction",
+        "transactionId": "0220161114560810",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Talletuskorko",
+        "amount": "0.15",
+        "debtorName": "Nordea Pankki"
+      },
+      {
+        "_type": "CreditTransaction",
+        "transactionId": "0220161114560345",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Pano",
+        "amount": "66.57",
+        "debtorName": "Matti Meikäläinen"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114560035",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Itsepalvelu",
+        "amount": "-0.23",
+        "creditorName": "Ville Virtanen"
+      },
+      {
+        "_type": "CreditTransaction",
+        "transactionId": "0220161114559942",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Talletuskorko",
+        "amount": "0.12",
+        "debtorName": "Nordea Pankki"
+      },
+      {
+        "_type": "CreditTransaction",
+        "transactionId": "0220161114559911",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Pano",
+        "amount": "67.40",
+        "debtorName": "Matti Meikäläinen"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114559880",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Korttiosto",
+        "amount": "-27.77",
+        "creditorName": "Stockmann Oyj Abp"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114559756",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Korttiosto",
+        "amount": "-7.99",
+        "creditorName": "K market Metsäkulma"
+      },
+      {
+        "_type": "CreditTransaction",
+        "transactionId": "0220161114559725",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Talletuskorko",
+        "amount": "0.11",
+        "debtorName": "Nordea Pankki"
+      },
+      {
+        "_type": "CreditTransaction",
+        "transactionId": "0220161114559508",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Talletuskorko",
+        "amount": "0.16",
+        "debtorName": "Nordea Pankki"
+      },
+      {
+        "_type": "CreditTransaction",
+        "transactionId": "0220161114559477",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Pano",
+        "amount": "57.33",
+        "debtorName": "Matti Meikäläinen"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114559322",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Korttiosto",
+        "amount": "-6.97",
+        "creditorName": "K market Metsäkulma"
+      },
+      {
+        "_type": "CreditTransaction",
+        "transactionId": "0220161114559260",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Pano",
+        "amount": "55.14",
+        "debtorName": "Matti Meikäläinen"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114558981",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "ATMOtto/Otto",
+        "amount": "-20.00"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114558547",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "ATMOtto/Otto",
+        "amount": "-20.00"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114558516",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Itsepalvelu",
+        "amount": "-0.16",
+        "creditorName": "Ville Virtanen"
+      },
+      {
+        "_type": "CreditTransaction",
+        "transactionId": "0220161114558485",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Pano",
+        "amount": "10.12",
+        "debtorName": "Firma OY"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114558454",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Korttiosto",
+        "amount": "-8.49",
+        "creditorName": "K market Metsäkulma"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114558330",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "ATMOtto/Otto",
+        "amount": "-20.00"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114558299",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Itsepalvelu",
+        "amount": "-0.20",
+        "creditorName": "Ville Virtanen"
+      },
+      {
+        "_type": "CreditTransaction",
+        "transactionId": "0220161114558268",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Pano",
+        "amount": "7.90",
+        "debtorName": "Firma OY"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114558082",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Itsepalvelu",
+        "amount": "-0.15",
+        "creditorName": "Ville Virtanen"
+      },
+      {
+        "_type": "CreditTransaction",
+        "transactionId": "0220161114557772",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Talletuskorko",
+        "amount": "0.14",
+        "debtorName": "Nordea Pankki"
+      },
+      {
+        "_type": "CreditTransaction",
+        "transactionId": "0220161114557741",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Pano",
+        "amount": "66.16",
+        "debtorName": "Matti Meikäläinen"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114557648",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Itsepalvelu",
+        "amount": "-0.24",
+        "creditorName": "Ville Virtanen"
+      },
+      {
+        "_type": "CreditTransaction",
+        "transactionId": "0220161114557617",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Pano",
+        "amount": "9.82",
+        "debtorName": "Firma OY"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114557493",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Korttiosto",
+        "amount": "-35.30",
+        "creditorName": "Stockmann Oyj Abp"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114557431",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Itsepalvelu",
+        "amount": "-0.21",
+        "creditorName": "Ville Virtanen"
+      },
+      {
+        "_type": "CreditTransaction",
+        "transactionId": "0220161114557400",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Pano",
+        "amount": "10.52",
+        "debtorName": "Firma OY"
+      },
+      {
+        "_type": "CreditTransaction",
+        "transactionId": "0220161114557307",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Pano",
+        "amount": "62.12",
+        "debtorName": "Matti Meikäläinen"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114557152",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Korttiosto",
+        "amount": "-9.19",
+        "creditorName": "K market Metsäkulma"
+      },
+      {
+        "_type": "CreditTransaction",
+        "transactionId": "0220161114556966",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Pano",
+        "amount": "10.34",
+        "debtorName": "Firma OY"
+      },
+      {
+        "_type": "CreditTransaction",
+        "transactionId": "0220161114556873",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-26",
+        "typeDescription": "Pano",
+        "amount": "67.20",
+        "debtorName": "Matti Meikäläinen"
+      },
+      {
+        "_type": "DebitTransaction",
+        "transactionId": "0220161114556842",
+        "currency": "EUR",
+        "bookingDate": "2017-11-24",
+        "valueDate": "2017-11-24",
+        "typeDescription": "Korttiosto",
+        "amount": "-30.90",
+        "creditorName": "Stockmann Oyj Abp"
+      }
+    ],
+    "_links": [
+      {
+        "rel": "next",
+        "href": "/v2/accounts/FI6593857450293470/transactions?continuationKey=0220161114561089-2"
+      }
+    ]
+  }
+}
