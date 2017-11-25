@@ -46,16 +46,20 @@ class HabitsScreen extends React.Component {
       this.setState({ explode: true });
       setTimeout(() => history.push(`/spending/nonessential`), 300);
     };
-    
+
     return (
-      <Box auto className="bg-white-logo" style={{'padding-top': '5em'}}>
+      <Box auto className="bg-white-logo" style={{ 'padding-top': '5em' }}>
         <HabeebBox type="essential" explode={false} />
         <HabeebBox type="nonessential" explode={this.state.explode} />
         <HabeebBox type="saving" explode={false} />
-        <Flex justify="space-between" style={{margin: '1em', 'margin-top': '3em', 'font-size': '18pt'}} onClick={clickHandler}>
-          <Box>Where could we save</Box>
-          <Box><FontAwesome name="arrow-right" className="habit-text" /></Box>
-        </Flex>
+        {this.state.explode ? null : (
+          <div>
+            <Flex justify="space-between" style={{ margin: '1em', 'margin-top': '3em', 'font-size': '18pt' }} onClick={clickHandler}>
+              <Box>Where could we save</Box>
+              <Box><FontAwesome name="arrow-right" className="habit-text" /></Box>
+            </Flex>
+          </div>
+        )}
       </Box >
     );
   }
