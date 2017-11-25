@@ -6,6 +6,8 @@ import lastNames from './data/lastNames';
 import random from 'lodash/random';
 import eatingOutGif from './img/eatingout.gif';
 import partyGif from './img/pary.gif';
+import movieGif from './img/mvoei.gif';
+import shoppingGif from './img/shorpy.gif';
 
 export const userFirstName = sample(firstNames);
 export const userLastName = sample(lastNames);
@@ -36,11 +38,23 @@ export const spends = [
     image: partyGif,
   },
   {
+    type: 'nonessential',
+    name: 'Movies',
+    value: random(0, 5) * 10.99,
+    image: movieGif,
+  },
+  {
+    type: 'nonessential',
+    name: 'Shopping',
+    value: random(15, 25) * 10,
+    image: shoppingGif,
+  },
+  {
     type: 'saving',
     name: 'Money Tucked Under A Pillow',
     value: monthlyIncome * random(0.02, 0.1, true),
   },
-];
+].filter((spend) => spend.value > 0);
 
 spends.forEach((spend) => {
   if (!spend.id) {
