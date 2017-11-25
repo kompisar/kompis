@@ -2,6 +2,7 @@ import React from 'react';
 import {withRouter} from 'react-router-dom';
 import {Flex, Box} from 'reflexbox';
 import Rheostat from 'rheostat';
+import {formatEUR} from '../utils';
 
 class BudgetBox extends React.Component {
 
@@ -21,40 +22,26 @@ class BudgetBox extends React.Component {
       budget: {
         min: 0,
         max: 100,
-        values: [50]
+        values: [100]
       },
     };
   }
-
-  onChange = (e) => {
-    console.log(e);
-    this.setState({
-      budget: Object.assign({}, this.state.budget, {values: e.values})
-    })
-  };
 
   render() {
     return (
       <Box style={{width: '80%'}} className="habit-box">
         <Flex>
           <Box auto className="title">{this.props.title}</Box>
-          <Box>{this.state.actual.values[0]} / {this.state.budget.values[0]}</Box>
+          <Box>
+            <span className="budget-actual-value">{formatEUR(this.state.actual.values[0])}</span>
+            /
+            {formatEUR(this.state.budget.values[0])}
+          </Box>
         </Flex>
         <div className="amount-ctr" style={{position: 'relative'}}>
-          <Rheostat {...this.state.projected} className="rheostat-projected"
-                    disable />
-          <Rheostat {...this.state.actual} className="rheostat-actual"
-                    disable
-                    style={{position: 'relative', left: 0, top: 0}} />
-          <Rheostat {...this.state.budget} className="rheostat-budget"
-                    onValuesUpdated={this.onChange}
-                    onChange={this.onChange}
-                    style={{position: 'relative', left: 0, top: 0}}
-          />
-          <Flex>
-            <Box auto>{this.state.actual.min}</Box>
-            <Box>{this.state.actual.max}</Box>
-          </Flex>
+          <Rheostat {...this.state.projected} className="rheostat-projected" disable />
+          <Rheostat {...this.state.actual} className="rheostat-actual" disable />
+          <Rheostat {...this.state.budget} className="rheostat-budget" disable />
         </div>
       </Box>
     );
