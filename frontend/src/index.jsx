@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
+import {AppContainer} from 'react-hot-loader';
 import Router from 'react-router-dom/HashRouter';
 import Route from 'react-router-dom/Route';
 import Switch from 'react-router-dom/Switch';
-
 import Welcome from './screens/Welcome';
 import './style.less';
 
 
-const root = Object.assign(document.createElement('div'), { id: 'root' });
+const root = Object.assign(document.createElement('div'), {id: 'root'});
 document.body.appendChild(root);
 const viewportMetaTag = Object.assign(document.createElement('meta'), {
   name: 'viewport',
