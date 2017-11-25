@@ -73,27 +73,29 @@ class HabitsScreen extends React.Component {
     };
 
     const whereCouldWeSaveBar = (
-      <div style={{ marginTop: '2em' }}>
-        <ArrowCTA text="Where could we save" onClick={clickHandler} />
-      </div>
+      <ArrowCTA text="Where could we save" onClick={clickHandler} />
     );
 
     return (
-      <Box auto className="bg-white-logo-dark" style={{ paddingTop: '5em' }}>
-        {
-          ['essential', 'nonessential', 'saving'].map(type => (
-            <HabeebBox
-              key={type}
-              type={type}
-              onNavigate={this.handleNavigate}
-              onNavigateStart={() => this.setState({ navigating: true })}
-              ref={(box) => {
-                this.boxes[type] = box;
-              }}
-            />
-          ))
-        }
-        {this.state.navigating ? null : whereCouldWeSaveBar}
+      <Box auto flex className="bg-white-logo-dark" style={{ paddingTop: '5em' }} column>
+        <Box auto>
+          {
+            ['essential', 'nonessential', 'saving'].map(type => (
+              <HabeebBox
+                key={type}
+                type={type}
+                onNavigate={this.handleNavigate}
+                onNavigateStart={() => this.setState({ navigating: true })}
+                ref={(box) => {
+                  this.boxes[type] = box;
+                }}
+              />
+            ))
+          }
+        </Box>
+        <Box auto>
+          {this.state.navigating ? null : whereCouldWeSaveBar}
+        </Box>
       </Box>
     );
   }

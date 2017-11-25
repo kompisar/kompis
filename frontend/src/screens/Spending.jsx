@@ -32,7 +32,7 @@ class Spending extends React.Component {
         <div className="spendbar-ctr animated fadeIn" style={{ flex: 1 }}>
           {typeSpends.map(spend => <SpendBar spend={spend} total={total} key={spend.id} />)}
         </div>
-        <ArrowCTA text="Let's start saving" />
+        {type === 'nonessential' ? <ArrowCTA text="Let's start saving" /> : null}
       </Box>
     );
   }
