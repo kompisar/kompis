@@ -15,7 +15,10 @@ class HabeebBox extends React.Component {
   }
 
   handleClick = () => {
-    const { type, onNavigate } = this.props;
+    const { type, onNavigate, onNavigateStart } = this.props;
+    if (onNavigateStart) {
+      onNavigateStart(type);
+    }
     this.setState(
       { explode: true },
       () => {
@@ -47,6 +50,14 @@ class HabeebBox extends React.Component {
 }
 
 class HabitsScreen extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      navigating: false,
+    };
+    this.boxes = {};
+  }
+
   handleNavigate = (type) => {
     const { history } = this.props;
     history.push(`/spending/${type}`);
@@ -72,16 +83,20 @@ class HabitsScreen extends React.Component {
 
     return (
       <Box auto className="bg-white-logo" style={{ paddingTop: '5em' }}>
-        <HabeebBox type="essential" onNavigate={this.handleNavigate} />
-        <HabeebBox
-          type="nonessential"
-          onNavigate={this.handleNavigate}
-          ref={(box) => {
-            this.nonessentialBox = box;
-          }}
-        />
-        <HabeebBox type="saving" onNavigate={this.handleNavigate} />
-        {whereCouldWeSaveBar}
+        {
+          ['essential', 'nonessential', 'saving'].map(type => (
+            <HabeebBox
+              key={type}
+              type={type}
+              onNavigate={this.handleNavigate}
+              onNavigateStart={() => this.setState({ navigating: true })}
+              ref={(box) => {
+                this.boxes[type] = box;
+              }}
+            />
+          ))
+        }
+        {this.state.navigating ? null : whereCouldWeSaveBar}
       </Box>
     );
   }
