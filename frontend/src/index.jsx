@@ -10,6 +10,7 @@ import Phone from './screens/Phone';
 import AnalyzingScreen from './screens/AnalyzingScreen';
 import Habits from './screens/Habits';
 import './styles/style.less';
+import Budget from './screens/Budget';
 import Spending from './screens/Spending';
 import SpendDetail from './screens/SpendDetail';
 
@@ -43,6 +44,7 @@ const render = () => {
             <Route exact path="/" component={Welcome} />
             <Route exact path="/analyze" component={AnalyzingScreen} />
             <Route exact path="/result" component={Habits} />
+            <Route exact path="/budget" component={Budget} />
             <Route exact path="/spending/:id" component={Spending} />
             <Route exact path="/detail/:id" component={SpendDetail} />
             <Route exact path="/phone" component={Phone} />

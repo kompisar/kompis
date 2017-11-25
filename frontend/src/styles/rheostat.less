@@ -1,0 +1,74 @@
+// Rheostat slider base styles
+
+.rheostat {
+  overflow: visible;
+}
+
+.rheostat-background {
+  background-color: #f3f1fa;
+  border: 1px solid #d8d8d8;
+  position: relative;
+  border-radius: 8px;
+}
+
+.rheostat-progress {
+  background-color: @kompis-purple;
+  position: absolute;
+  border-radius: 6px;
+}
+
+.rheostat-handle {
+  background-color: #1f1b3a;
+  border-radius: 100%;
+  height: 16px;
+  width: 16px;
+  outline: none;
+  z-index: 2;
+}
+
+// Horizontal slider styles
+
+.rheostat-horizontal {
+  height: 32px;
+}
+
+.rheostat-horizontal .rheostat-background {
+  height: 18px;
+  top: 0;
+  width: 100%;
+}
+
+.rheostat-horizontal .rheostat-progress {
+  height: 10px;
+  top: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.rheostat-horizontal .rheostat-handle {
+  margin-left: -8px;
+  top: 1px;
+}
+
+// Vertical slider styles
+
+.rheostat-vertical {
+  height: 100%;
+  width: 24px;
+}
+
+.rheostat-vertical .rheostat-background {
+  height: 100%;
+  top: 0;
+  width: 15px;
+}
+
+.rheostat-vertical .rheostat-progress {
+  left: 2px;
+  width: 13px;
+}
+
+.rheostat-vertical .rheostat-handle {
+  left: -5px;
+  margin-top: -12px;
+}
