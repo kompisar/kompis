@@ -49,6 +49,7 @@ const PhoneScreen = withRouter(({history}) => {
     'showDemo2': '2',
     'showDemo3': '3',
     'showDemo4': '4',
+    'showDemo5': '5',
   };
 
   const handlers = {
@@ -81,6 +82,14 @@ const PhoneScreen = withRouter(({history}) => {
         Sees like you just had a dinner for {formatEUR(48.1)},
         should we tune your retirement plan so you can have
         such a dinner once every month? 🍲 🍲 🍲
+      </span>,
+      '/result'
+    ),
+    'showDemo5': () => createToast(
+      <span>
+        Good morning!
+        It's an exceptional day as you reached 35% of your Vacation Trip goal ✈ 🌴 😎
+        Keep up the hard work! 🏋
       </span>,
       '/result'
     ),
