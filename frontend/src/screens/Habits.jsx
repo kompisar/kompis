@@ -35,12 +35,16 @@ class HabeebBox extends React.Component {
     const title = typeTitles[type];
     const typeSpends = spends.filter(s => s.type === this.props.type);
     const total = typeSpends.reduce((acc, s) => acc + s.value, 0);
+    const totalSpends = spends.reduce((acc, s) => acc + s.value, 0);
+
+    const totalRatio = total / totalSpends;
+    const extraClass = totalRatio > 0.40 ? '-larger' : totalRatio < 0.10 ? '-smaller' : '';
     return (
       <Backbloder explode={this.state.explode}>
         <div className={`habit-box habit-box-${color}`} onClick={this.handleClick}>
-          <div className="title">{title}</div>
+          <div className={"title" + extraClass}>{title}</div>
           <div className="amount-ctr">
-            <span className="amount">{formatEUR(total)}</span>
+            <span className={"amount" + extraClass}>{formatEUR(total)}</span>
             <span className="per">&nbsp;/ mo</span>
           </div>
         </div>
