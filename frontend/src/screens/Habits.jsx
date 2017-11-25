@@ -93,7 +93,7 @@ class HabitsScreen extends React.Component {
             ))
           }
         </Box>
-        <Box auto>
+        <Box>
           {this.state.navigating ? null : whereCouldWeSaveBar}
         </Box>
       </Box>
