@@ -2,16 +2,40 @@ import sample from 'lodash/sample';
 import firstNames from './data/firstNames';
 import lastNames from './data/lastNames';
 import random from 'lodash/random';
+import eatingOutGif from './img/eatingout.gif';
+import partyGif from './img/pary.gif';
 
 export const userFirstName = sample(firstNames);
 export const userLastName = sample(lastNames);
 
 export const monthlyIncome = random(15, 45) * 100;
 
-export const internetSpend = (random(3, 7) * 10) + 9;
-export const rentSpend = random(25, 65) * 10;
-
-export const essentialSpend = (internetSpend + rentSpend);
-export const savingSpend = monthlyIncome * random(0.02, 0.1, true);
-export const nonEssentialSpend = (monthlyIncome - savingSpend - essentialSpend) * random(0.2, 0.7, true);
-
+export const spends = [
+  {
+    type: 'essential',
+    name: 'Internet & Phone',
+    value: (random(3, 7) * 10) + 9,
+  },
+  {
+    type: 'essential',
+    name: 'Rent',
+    value: random(25, 65) * 10,
+  },
+  {
+    type: 'nonessential',
+    name: 'Eating bae out 😛',
+    value: 69,
+    image: eatingOutGif,
+  },
+  {
+    type: 'nonessential',
+    name: 'Partying',
+    value: random(15, 25) * 10,
+    image: partyGif,
+  },
+  {
+    type: 'saving',
+    name: 'Money Tucked Under A Pillow',
+    value: monthlyIncome * random(0.02, 0.1, true),
+  },
+];
