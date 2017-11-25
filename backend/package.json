@@ -5,6 +5,9 @@
   "repository": "git@github.com:orasimus/goldjack.git",
   "author": "Otso Rasimus <orasimus@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "express": "^4.16.2"
   }
