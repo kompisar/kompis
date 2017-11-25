@@ -16,13 +16,53 @@
 
 .toastify--top-center {
   margin-left: -25vh;
+  left: 50%;
 }
 
 .toastify-content {
   border-radius: 15px;
+  padding: 12px;
+  margin-bottom: 1rem;
 }
 
 .toastify-content--default {
   background: #94ad8c;
   color: #002300;
+}
+
+// Notification animations
+
+@keyframes zoom-in-frames {
+  from {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoom-in {
+  animation-name: zoom-in-frames;
+}
+
+@keyframes zoom-out-frames {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.zoom-out {
+  animation-name: zoom-out-frames;
+}
+
+.animate-notification {
+  animation-duration: 400ms;
 }
