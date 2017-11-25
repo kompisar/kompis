@@ -12,7 +12,7 @@ class HabitBox extends React.Component {
     super(props);
     this.state = {
       explode: false,
-    }
+    };
   }
 
   render() {
@@ -49,7 +49,7 @@ class HabitsScreen extends React.Component {
         <HabeebBox type="essential" />
         <HabeebBox type="nonessential" />
         <HabeebBox type="saving" />
-      </Box >
+      </Box>
     );
   }
 }

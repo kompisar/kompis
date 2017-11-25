@@ -25,7 +25,7 @@ export const spends = [
   },
   {
     type: 'nonessential',
-    name: 'Eating bae out 😛',
+    name: 'Eating out',
     value: 69,
     image: eatingOutGif,
   },
