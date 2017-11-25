@@ -15,7 +15,7 @@ export default class App extends React.Component {
         </Helmet>
         <Menu color="blue" inverted widths={3}>
           <Menu.Item name="home" active={activeItem === 'home'} onClick={this.handleItemClick} />
-          <Menu.Item name="sarving" active={activeItem === 'saving'} onClick={this.handleItemClick} />
+          <Menu.Item name="saving" active={activeItem === 'saving'} onClick={this.handleItemClick} />
           <Menu.Item name="friends" active={activeItem === 'friends'} onClick={this.handleItemClick} />
         </Menu>
       </main>
