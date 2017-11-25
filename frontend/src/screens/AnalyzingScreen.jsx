@@ -17,11 +17,11 @@ class AnalyzingScreen extends React.Component {
   }
 
   componentDidMount() {
-    this.tickTimer = setInterval(this.tick.bind(this), 45);
+    this.tickTimer = setInterval(this.tick.bind(this), 56);
   }
 
   tick() {
-    const newProgress = this.state.progress + Math.random() * 2;
+    const newProgress = this.state.progress + (Math.random() * 2);
     this.setState({
       progress: newProgress,
       lastPayee: sample(payees),
@@ -30,18 +30,25 @@ class AnalyzingScreen extends React.Component {
 
   render() {
     const { progress, lastPayee } = this.state;
-    let content = 'wat';
+    const { history } = this.props;
+    let content = null;
     if (progress < 100) {
       content = (
-        <div>
+        <div style={{ fontSize: '20pt' }}>
+          <div style={{ margin: '1em' }}>Just a moment, taking a look at your spending habits...</div>
           <CircularProgressbar percentage={Math.ceil(progress)} />
-          <div style={{ fontSize: '20pt', marginTop: '1em' }}>{truncate(lastPayee, 27)}</div>
+          <div style={{ marginTop: '1em' }}>{truncate(lastPayee, 27)}</div>
         </div>
       );
     } else {
       content = (
-        <div style={{ fontSize: '40pt', margin: '0.5em' }}>
-          fucksake stop spending money {userFirstName}
+        <div
+          style={{ fontSize: '28pt', margin: '1em' }}
+          className="animated fadeIn"
+          onClick={() => history.push('/result')}
+        >
+          <p>Okay, got it!</p>
+          Let's take a look at how you spend your hard-earned cash!
         </div>
       );
     }
