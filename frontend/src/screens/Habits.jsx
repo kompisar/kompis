@@ -1,12 +1,12 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { Box, Flex } from 'reflexbox';
+import { Box } from 'reflexbox';
 import { spends } from '../config';
 import { formatEUR } from '../utils';
 import { typeColors, typeTitles } from '../consts';
-import FontAwesome from 'react-fontawesome';
 import Backbloder from '../components/Backploder';
+import ArrowCTA from '../components/ArrowCTA';
 
 class HabeebBox extends React.Component {
   constructor(props) {
@@ -65,20 +65,11 @@ class HabitsScreen extends React.Component {
 
   render() {
     const clickHandler = () => {
-      this.nonessentialBox.handleClick();
+      this.boxes.nonessential.handleClick();
     };
 
     const whereCouldWeSaveBar = (
-      <div>
-        <Flex
-          justify="space-between"
-          style={{ margin: '1em', marginTop: '3em', fontSize: '18pt' }}
-          onClick={clickHandler}
-        >
-          <Box>Where could we save</Box>
-          <Box><FontAwesome name="arrow-right" className="habit-text" /></Box>
-        </Flex>
-      </div>
+      <ArrowCTA text="Where could we save" onClick={clickHandler} />
     );
 
     return (
