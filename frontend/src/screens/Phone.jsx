@@ -57,13 +57,13 @@ const PhoneScreen = withRouter(({history}) => {
       <span>
         You just spent {formatEUR(7)} in a bar 🍺
         Have fun!
-        You can enjoy 4 more drinks tonight.
+        You can enjoy up to 2 more drinks tonight.
       </span>,
       '/result'
     ),
     'showDemo2': () => createToast(
       <span>
-        You have spent {formatEUR(29)} in bars 🍻 tonight.
+        You have spent {formatEUR(18)} in bars 🍻 tonight.
         If you keep going, you'll go over your non-essential budget! 📉
       </span>,
       '/result'
