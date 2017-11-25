@@ -26,9 +26,11 @@ class Spending extends React.Component {
       sortBy(spends.filter(s => s.type === type), 'value')
     );
     const total = typeSpends.reduce((acc, s) => acc + s.value, 0);
+    const title = typeTitles[type];
 
     return (
       <Box auto className={`bg-${color}-logo`}>
+        <div className="spending-text">{title}</div>
         <div className="spendbar-ctr animated fadeIn">
           {typeSpends.map((spend) => <SpendBar spend={spend} total={total} key={spend.id} />)}
         </div>
