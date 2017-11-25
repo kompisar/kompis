@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
+import Router from 'react-router-dom/HashRouter';
+import Route from 'react-router-dom/Route';
+import Switch from 'react-router-dom/Switch';
+
 import Welcome from './screens/Welcome';
 import './style.less';
 
@@ -16,7 +20,11 @@ document.head.appendChild(viewportMetaTag);
 const render = () => {
   const comp = (
     <AppContainer>
-      <Welcome />
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Welcome} />
+        </Switch>
+      </Router>
     </AppContainer>
   );
   ReactDOM.render(comp, root);
