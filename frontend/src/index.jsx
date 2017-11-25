@@ -6,13 +6,14 @@ import Route from 'react-router-dom/Route';
 import Switch from 'react-router-dom/Switch';
 import {HotKeys} from 'react-hotkeys';
 import Welcome from './screens/Welcome';
-import Phone from './screens/Phone';
 import AnalyzingScreen from './screens/AnalyzingScreen';
 import Habits from './screens/Habits';
-import './styles/style.less';
 import Budget from './screens/Budget';
 import Spending from './screens/Spending';
 import SpendDetail from './screens/SpendDetail';
+import Phone from './screens/Phone';
+import './styles/style.less';
+import Goals from './screens/Goals';
 
 
 const root = Object.assign(document.createElement('div'), {id: 'root'});
@@ -48,6 +49,7 @@ const render = () => {
             <Route exact path="/spending/:id" component={Spending} />
             <Route exact path="/detail/:id" component={SpendDetail} />
             <Route exact path="/phone" component={Phone} />
+            <Route exact path="/goals" component={Goals} />
           </Switch>
         </HotKeys>
       </HashRouter>
