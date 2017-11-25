@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { Box } from 'reflexbox';
 import Imploder from '../components/Imploder';
 import goals from '../goals';
-import DetailCard from '../components/DetailCard';
+import DetailCard, { DetailCardButton } from '../components/DetailCard';
 
 class GoalsScreen extends React.Component {
   constructor(props) {
@@ -12,8 +12,17 @@ class GoalsScreen extends React.Component {
     this.state = {
       goalIndex: 0,
     };
-
   }
+
+  onDecision = (goal, decision) => {
+    goal.decision = decision;
+    const nextIndex = this.state.goalIndex + 1;
+    if (nextIndex >= goals.length) {
+      this.props.history.push('/onboarding-done');
+      return;
+    }
+    this.setState({ goalIndex: nextIndex });
+  };
 
   render() {
     const goal = goals[this.state.goalIndex];
@@ -27,8 +36,11 @@ class GoalsScreen extends React.Component {
           image={goal.image}
           title={goal.title}
           value={goal.value}
+          actions={[
+            (<DetailCardButton icon="fa-close" text="No" key="no" onClick={() => this.onDecision(goal, 'no')} />),
+            (<DetailCardButton icon="fa-check" text="Yes" key="yes" onClick={() => this.onDecision(goal, 'yes')} />),
+          ]}
         />
-
       </Box>
     );
   }
