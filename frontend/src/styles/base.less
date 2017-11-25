@@ -19,3 +19,24 @@ body, input, textarea, button {
   display: flex;
   flex-direction: row;
 }
+
+@media (min-width: 380px) {
+  #root {
+    > * {
+      filter: blur(10px);
+    }
+    &:after {
+      content: "Please use your browser's mobile mode!";
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      text-align: center;
+      filter: none;
+      font-size: 100px;
+      color: red;
+    }
+  }
+
+}
