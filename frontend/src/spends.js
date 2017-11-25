@@ -4,6 +4,7 @@ import random from 'lodash/random';
 import eatingOutGif from './img/eatingout.gif';
 import partyGif from './img/pary.gif';
 import movieGif from './img/mvoei.gif';
+import hobbyGif from './img/hoabbya.gif';
 import shoppingGif from './img/shorpy.gif';
 
 export const monthlyIncome = random(15, 45) * 100;
@@ -17,7 +18,7 @@ export const spends = [
   {
     type: 'essential',
     name: 'Rent',
-    value: random(25, 65) * 10,
+    value: random(45, 85) * 10,
   },
   {
     type: 'nonessential',
@@ -36,6 +37,12 @@ export const spends = [
     name: 'Movies',
     value: random(0, 5) * 10.99,
     image: movieGif,
+  },
+  {
+    type: 'nonessential',
+    name: 'Hobbies',
+    value: random(75, 250),
+    image: hobbyGif,
   },
   {
     type: 'nonessential',
