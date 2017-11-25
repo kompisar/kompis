@@ -1,21 +1,57 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import { withRouter } from 'react-router-dom';
-import { Box } from 'reflexbox';
-import { spends } from '../../config';
-import { typeColors } from '../../consts';
-import { navigateOnboarding } from '../../navigation';
-import DetailCard, { DetailCardButton } from '../../components/DetailCard';
+import {withRouter} from 'react-router-dom';
+import {Flex, Box} from 'reflexbox';
+import {spends} from '../../config';
+import {typeColors} from '../../consts';
+import {navigateOnboarding} from '../../navigation';
+import DetailCard, {DetailCardButton} from '../../components/DetailCard';
+import Rheostat from 'rheostat';
 
 
-const SpendDetailCard = ({ spend, onDecision }) => {
+const ComparisonSlider = ({spend, average}) => {
+  const max = Math.max(spend, average);
+  const averageLabel = (<Box auto className="average-label" style={{textAlign: 'right'}}>Average</Box>);
+  const spendLabel = (<Box auto className="spend-label" style={{textAlign: 'right'}}>You</Box>);
+  let label;
+  if (average > spend) {
+    label = <Flex auto>{spendLabel}{averageLabel}</Flex>;
+  } else {
+    label = <Flex auto>{averageLabel}{spendLabel}</Flex>;
+  }
+  return (
+    <div style={{position: 'relative'}}>
+      <Rheostat
+        min={0}
+        max={max}
+        values={[average]}
+        className="rheostat-average"
+        disabled
+      />
+      <Rheostat
+        min={0}
+        max={max}
+        values={[spend]}
+        className="rheostat-spend"
+        disabled
+      />
+      {label}
+    </div>
+  );
+};
+
+
+const SpendDetailCard = ({spend, onDecision}) => {
   const {
     value, image, name, type,
   } = spend;
-  let advice = null;
+  let body = null;
   const actions = [];
   if (type === 'nonessential') {
-    advice = 'You spend a whole lot on this. Can we maybe cut back?'; // TODO: Fixme
+    body = (
+      <div style={{marginTop: '20px'}}>
+        <ComparisonSlider spend={value} average={150} />
+      </div>);
     actions.push(<DetailCardButton icon="fa-close" text="No" key="no" onClick={() => onDecision(spend, 'no')} />);
     actions.push(<DetailCardButton icon="fa-check" text="Yes" key="yes" onClick={() => onDecision(spend, 'yes')} />);
   }
@@ -24,7 +60,7 @@ const SpendDetailCard = ({ spend, onDecision }) => {
       image={image}
       value={value}
       title={name}
-      body={<div className="advice">{advice}</div>}
+      body={body}
       actions={actions}
     />
   );
@@ -33,7 +69,7 @@ const SpendDetailCard = ({ spend, onDecision }) => {
 
 class SpendDetailScreen extends React.Component {
   render() {
-    const { id } = this.props.match.params;
+    const {id} = this.props.match.params;
     const spendObj = spends.find(s => s.id === id);
     if (!spendObj) {
       return (<div>Oops, no spend with id {id}</div>);

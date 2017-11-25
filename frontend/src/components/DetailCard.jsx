@@ -1,13 +1,11 @@
 import React from 'react';
-import { isNumber } from 'lodash';
-import { formatEUR } from '../utils';
+import {isNumber} from 'lodash';
+import {formatEUR} from '../utils';
 
-const DetailCard = ({
-  image, title, value, body, actions,
-}) => {
+const DetailCard = ({image, title, value, body, actions}) => {
   const imageCtr = (
     image ? (
-      <div className="image" style={{ backgroundImage: `url(${image})` }}>&nbsp;</div>
+      <div className="image" style={{backgroundImage: `url(${image})`}}>&nbsp;</div>
     ) : null
   );
   return (
@@ -15,7 +13,9 @@ const DetailCard = ({
       {imageCtr}
       <div className="detail-card-main">
         <div className="title">{title}</div>
-        <div className="amount">{isNumber(value) ? formatEUR(value) : value}</div>
+        <div className="amount">
+          {isNumber(value) ? formatEUR(value) : value}
+        </div>
         {body}
       </div>
       <div className="detail-card-actions">
@@ -26,9 +26,9 @@ const DetailCard = ({
 };
 
 
-export const DetailCardButton = ({ text, icon, onClick }) => (
+export const DetailCardButton = ({text, icon, onClick}) => (
   <button onClick={onClick}>
-    {icon ? <i className={`fa ${icon}`} style={{ paddingRight: '0.25em' }} /> : null}
+    {icon ? <i className={`fa ${icon}`} style={{paddingRight: '0.25em'}} /> : null}
     {text}
   </button>
 );
