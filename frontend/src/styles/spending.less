@@ -1,11 +1,37 @@
-.spending-essential {
-    background-color: @kompis-cyan;
-}
-  
-.spending-nonessential {
-    background-color: @kompis-red;
+.spendbar-ctr {
+  padding: 5vw;
+  padding-top: 5em;
 }
 
-.spending-saving {
-    background-color: @kompis-green;
+.spendbar {
+  margin-bottom: 35px;
+  text-shadow: 0 1px 1px rgba(109, 104, 123, 0.8);
+  progress {
+    display: block;
+    height: 20px;
+    border-radius: 12px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    -webkit-appearance: none;
+    margin-bottom: 0.5em;
+
+    &::-webkit-progress-bar {
+      border-radius: 12px;
+      background: transparent;
+    }
+    &::-webkit-progress-value {
+      background: @kompis-light;
+      border-radius: 12px;
+    }
+  }
+  .title {
+    font-family: industry, sans-serif;
+    font-size: 14pt;
+    text-transform: uppercase;
+  }
+  .value {
+    font-size: 25pt;
+    line-height: 1;
+    margin-left: -5px;  // ergh tweak
+  }
 }

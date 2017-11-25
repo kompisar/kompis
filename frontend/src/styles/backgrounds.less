@@ -1,38 +1,21 @@
-
-.bg-purple {
-  background: @kompis-purple;
-  color: @kompis-light;
+.bg-variants(@name, @background, @color) {
+  .bg-@{name} {
+    background: @background;
+    color: @color;
+  }
+  .bg-@{name}-logo {
+    background: @background;
+    color: @color;
+    background: @background url(../img/kompis_grey.svg);
+    background-position: 5vw 5vw;
+    background-repeat: no-repeat;
+    background-size: 25%;
+  }
 }
 
-.bg-red {
-  background: @kompis-red;
-  color: @kompis-light;
-}
-
-.bg-blue {
-  background: @kompis-cyan;
-  color: @kompis-light;
-}
-
-.bg-green {
-  background: @kompis-green;
-  color: @kompis-light;
-}
-
-.bg-light {
-  background: @kompis-light;
-  color: @kompis-dark;
-}
-
-.bg-white {
-  background: #fff;
-  color: @kompis-dark;
-}
-
-.bg-white-logo {
-  background: #fff url(../img/kompis_grey.svg);
-  background-position: 5vw 5vw;
-  background-repeat: no-repeat;
-  background-size: 25%;
-  color: @kompis-dark;
-}
+.bg-variants(purple, @kompis-purple, @kompis-light);
+.bg-variants(red, @kompis-red, @kompis-light);
+.bg-variants(blue, @kompis-cyan, @kompis-light);
+.bg-variants(green, @kompis-green, @kompis-light);
+.bg-variants(light, @kompis-light, @kompis-dark);
+.bg-variants(white, #fff, @kompis-dark);
