@@ -9,6 +9,7 @@ import Phone from './screens/Phone';
 import AnalyzingScreen from './screens/AnalyzingScreen';
 import Habits from './screens/Habits';
 import './styles/style.less';
+import Spending from './screens/Spending';
 
 
 const root = Object.assign(document.createElement('div'), {id: 'root'});
@@ -28,6 +29,7 @@ const render = () => {
           <Route exact path="/analyze" component={AnalyzingScreen} />
           <Route exact path="/phone" component={Phone} />
           <Route exact path="/result" component={Habits} />
+          <Route exact path="/spending/:id" component={Spending} />
         </Switch>
       </Router>
     </AppContainer>
