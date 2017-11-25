@@ -22,7 +22,7 @@ class OnboardingDone extends React.Component {
           </Box>
         </Box>
         <Box>
-          <ArrowCTA text="Let's go!" onClick={() => this.props.history.push('/main')} />
+          <ArrowCTA text="Let's go!" onClick={() => this.props.history.push('/overview')} />
         </Box>
       </Box>
     );
