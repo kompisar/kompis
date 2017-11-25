@@ -46,11 +46,13 @@ const PhoneScreen = withRouter(({history}) => {
   const keyMap = {
     'showDemo1': '1',
     'showDemo2': '2',
+    'showDemo3': '3',
   };
 
   const handlers = {
-    'showDemo1': () => createToast('You have brought beer for $15.8 tonight, want to save that much?', '/result'),
-    'showDemo2': () => createToast('You had a nice dinner for $78.1, should we tune your retirement savings so you can have a dinner like this once every month?', '/result'),
+    'showDemo1': () => createToast('You have spent $25.8 in bars 🍻 tonight. If you keep going, you will go over your leisure budget!', '/result'),
+    'showDemo2': () => createToast('🎉 PARTY 🎉 You spent $183.1 in bars and nightclubs yesterday! This affects your saving plan, should we retune it?', '/result'),
+    'showDemo3': () => createToast('🍲 Sees like you just had a nice dinner for $78.1, should we tune your retirement plan so you can have a dinner like this once every month?', '/result'),
   };
 
   return (
