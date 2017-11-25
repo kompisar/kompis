@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Box } from 'reflexbox';
 import { typeColors, typeTitles } from '../consts';
 
 class Spending extends React.Component {
@@ -10,9 +11,9 @@ class Spending extends React.Component {
         const title = typeTitles[type];
 
         return (
-            <div className={`spending-${color}`}>
+            <Box auto className={`spending-${type}`}>
                 kikkeli
-            </div>
+            </Box>
         );
     }
 }
