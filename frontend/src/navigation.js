@@ -8,7 +8,7 @@ export function navigateOnboarding(history) {
     'value',
   ));
   if (undecidedNonessentialSpends.length === 0) {
-    history.push('/goals');
+    history.push('/onboard-goals');
   } else {
     const spend = undecidedNonessentialSpends[0];
     history.push(`/detail/${spend.id}`);

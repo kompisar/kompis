@@ -43,7 +43,7 @@ class App extends React.Component {
             <Route exact path="/spending/:id" component={Spending} />
             <Route exact path="/detail/:id" component={SpendDetail} />
             <Route exact path="/phone" component={Phone} />
-            <Route exact path="/goals" component={Goals} />
+            <Route exact path="/onboard-goals" component={Goals} />
             <Route exact path="/onboarding-done" component={OnboardingDone} />
           </Switch>
         </HotKeys>
