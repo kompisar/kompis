@@ -4,7 +4,7 @@ import {AppContainer} from 'react-hot-loader';
 import Router from 'react-router-dom/HashRouter';
 import Route from 'react-router-dom/Route';
 import Switch from 'react-router-dom/Switch';
-import Welcome from './screens/Phone';
+import Welcome from './screens/Welcome';
 import './style.less';
 
 
