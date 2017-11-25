@@ -1,5 +1,11 @@
 module.exports = {
-  entry: `${__dirname}/src/index.jsx`,
+  entry: [
+    'react-hot-loader/patch',
+    `${__dirname}/src/index.jsx`,
+  ],
+  output: {
+    publicPath: '/',
+  },
   module: {
     rules: [
       {
