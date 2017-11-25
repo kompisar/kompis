@@ -9,12 +9,16 @@
   "dependencies": {
     "animate.css": "^3.5.2",
     "less": "^2.7.3",
+    "lodash": "^4.17.4",
+    "normalize.css": "^7.0.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-helmet": "^5.2.0",
     "react-redux": "^5.0.6",
+    "react-transition-group": "^2.2.1",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
+    "reflexbox": "^3.0.0-0",
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.76.0"
   },

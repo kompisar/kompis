@@ -1,17 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import 'semantic-ui-css/semantic.css';
-
-import App from './App';
+import Welcome from './screens/Welcome';
 import './style.less';
 
 
 const root = Object.assign(document.createElement('div'), { id: 'root' });
 document.body.appendChild(root);
+const viewportMetaTag = Object.assign(document.createElement('meta'), {
+  name: 'viewport',
+  content: 'width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0',
+});
+document.head.appendChild(viewportMetaTag);
 
 const render = () => {
-  ReactDOM.render(<AppContainer><App /></AppContainer>, root);
+  const comp = (
+    <AppContainer>
+      <Welcome />
+    </AppContainer>
+  );
+  ReactDOM.render(comp, root);
 };
 
 render();

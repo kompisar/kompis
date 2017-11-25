@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,400i,700,700i');
+@import '~normalize.css/normalize.css';
+
+@font-face {
+  font-face-name: 'industry';
+  src: url(../fonts/industry.woff2);
+}
+
+@kompis-purple: #8979ED;
+@kompis-cyan: #67CBE7;
+@kompis-green: #67D5A9;
+@kompis-red: #E97575;
+@kompis-dark: #1F1B39;
+@kompis-light: #f0f0f5;
+
+html, body {
+  height: 100%;
+}
+
+body, input, textarea {
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.welcome {
+  background: @kompis-purple;
+  color: @kompis-light;
+}
