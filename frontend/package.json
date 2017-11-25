@@ -9,6 +9,7 @@
   "dependencies": {
     "animate.css": "^3.5.2",
     "font-awesome": "^4.7.0",
+    "glamor": "^2.20.40",
     "lodash": "^4.17.4",
     "normalize.css": "^7.0.0",
     "react": "^16.1.1",
