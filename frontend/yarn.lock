@@ -4008,6 +4008,12 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-circular-progressbar@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/react-circular-progressbar/-/react-circular-progressbar-0.5.0.tgz#74b67862431f3fa5e46f380874e4284f5f321b9a"
+  dependencies:
+    prop-types "^15.5.10"
+
 react-deep-force-update@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-2.1.1.tgz#8ea4263cd6455a050b37445b3f08fd839d86e909"

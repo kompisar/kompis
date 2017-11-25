@@ -5,7 +5,8 @@ import Router from 'react-router-dom/HashRouter';
 import Route from 'react-router-dom/Route';
 import Switch from 'react-router-dom/Switch';
 import Welcome from './screens/Welcome';
-import './style.less';
+import './styles/style.less';
+import AnalyzingScreen from './screens/AnalyzingScreen';
 
 
 const root = Object.assign(document.createElement('div'), {id: 'root'});
@@ -22,6 +23,7 @@ const render = () => {
       <Router>
         <Switch>
           <Route exact path="/" component={Welcome} />
+          <Route exact path="/analyze" component={AnalyzingScreen} />
         </Switch>
       </Router>
     </AppContainer>

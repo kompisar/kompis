@@ -5,5 +5,6 @@ module.exports = {
   },
   "rules": {
     "max-len": "off",
+    "import/first": "off",
   },
 };
