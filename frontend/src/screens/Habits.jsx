@@ -73,7 +73,7 @@ class HabitsScreen extends React.Component {
     );
 
     return (
-      <Box auto className="bg-white-logo" style={{ paddingTop: '5em' }}>
+      <Box auto className="bg-white-logo-dark" style={{ paddingTop: '5em' }}>
         {
           ['essential', 'nonessential', 'saving'].map(type => (
             <HabeebBox

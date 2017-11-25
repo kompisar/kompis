@@ -61,7 +61,7 @@ class AnalyzingScreen extends React.Component {
       );
     }
     return (
-      <Flex flex auto align="center" justify="center" column className="bg-white-logo">
+      <Flex flex auto align="center" justify="center" column className="bg-white-logo-dark">
         <div style={{ textAlign: 'center' }}>
           {content}
         </div>

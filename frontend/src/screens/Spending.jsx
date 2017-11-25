@@ -29,7 +29,7 @@ class Spending extends React.Component {
     const title = typeTitles[type];
 
     return (
-      <Box auto className={`bg-${color}-logo`}>
+      <Box auto className={`bg-${color}-logo-light`}>
         <div className="spending-text">{title}</div>
         <div className="spendbar-ctr animated fadeIn">
           {typeSpends.map((spend) => <SpendBar spend={spend} total={total} key={spend.id} />)}
