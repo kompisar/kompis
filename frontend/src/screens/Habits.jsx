@@ -69,7 +69,9 @@ class HabitsScreen extends React.Component {
     };
 
     const whereCouldWeSaveBar = (
-      <ArrowCTA text="Where could we save" onClick={clickHandler} />
+      <div style={{ marginTop: '2em' }}>
+        <ArrowCTA text="Where could we save" onClick={clickHandler} />
+      </div>
     );
 
     return (

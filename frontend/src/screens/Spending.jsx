@@ -1,11 +1,12 @@
 import React from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { Box } from 'reflexbox';
 import { typeColors, typeTitles } from '../consts';
 import { spends } from '../config';
 import { formatEUR } from '../utils';
 import sortBy from 'lodash/sortBy';
 import reverse from 'lodash/reverse';
+import ArrowCTA from '../components/ArrowCTA';
 
 const SpendBar = withRouter(({ spend, total, history }) => {
   const { id, name, value } = spend;
@@ -22,18 +23,16 @@ class Spending extends React.Component {
   render() {
     const type = this.props.match.params.id;
     const color = typeColors[type];
-    const typeSpends = reverse(
-      sortBy(spends.filter(s => s.type === type), 'value')
-    );
+    const typeSpends = reverse(sortBy(spends.filter(s => s.type === type), 'value'));
     const total = typeSpends.reduce((acc, s) => acc + s.value, 0);
     const title = typeTitles[type];
 
     return (
-      <Box auto className={`bg-${color}-logo-light`}>
-        <div className="spending-text">{title}</div>
-        <div className="spendbar-ctr animated fadeIn">
-          {typeSpends.map((spend) => <SpendBar spend={spend} total={total} key={spend.id} />)}
+      <Box auto className={`bg-${color}-logo-light`} flex column>
+        <div className="spendbar-ctr animated fadeIn" style={{ flex: 1 }}>
+          {typeSpends.map(spend => <SpendBar spend={spend} total={total} key={spend.id} />)}
         </div>
+        <ArrowCTA text="Let's start saving" />
       </Box>
     );
   }
