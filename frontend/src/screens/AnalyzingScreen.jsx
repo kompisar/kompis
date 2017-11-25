@@ -20,6 +20,10 @@ class AnalyzingScreen extends React.Component {
     this.tickTimer = setInterval(this.tick.bind(this), 56);
   }
 
+  componentWillUnmount() {
+    clearInterval(this.tickTimer);
+  }
+
   tick() {
     const newProgress = this.state.progress + (Math.random() * 2);
     this.setState({
