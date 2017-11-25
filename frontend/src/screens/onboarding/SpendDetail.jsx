@@ -52,8 +52,8 @@ const SpendDetailCard = ({spend, onDecision}) => {
       <div style={{marginTop: '20px'}}>
         <ComparisonSlider spend={value} average={150} />
       </div>);
-    actions.push(<DetailCardButton icon="fa-close" text="No" key="no" onClick={() => onDecision(spend, 'no')} />);
-    actions.push(<DetailCardButton icon="fa-check" text="Yes" key="yes" onClick={() => onDecision(spend, 'yes')} />);
+    actions.push(<DetailCardButton icon="fa-close text-red" text="No" key="no" onClick={() => onDecision(spend, 'no')} />);
+    actions.push(<DetailCardButton icon="fa-check text-green" text="Yes" key="yes" onClick={() => onDecision(spend, 'yes')} />);
   }
   return (
     <DetailCard
@@ -76,7 +76,10 @@ class SpendDetailScreen extends React.Component {
     }
     const color = typeColors[spendObj.type];
     return (
-      <Box auto className={`bg-${color}`}>
+      <Box auto className={`bg-${color}-logo-light`} style={{ paddingTop: '5em' }}>
+        <div className="goal-overtext">
+          Should we start saving from...
+        </div>
         <SpendDetailCard spend={spendObj} onDecision={this.handleDecision} />
       </Box>
     );

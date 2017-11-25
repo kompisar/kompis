@@ -16,8 +16,8 @@ const GoalCardAndTitle = ({ goal, onDecision, fadeOut }) => (
       title={goal.title}
       value={goal.value}
       actions={[
-        (<DetailCardButton icon="fa-close" text="No" key="no" onClick={() => onDecision(goal, 'no')} />),
-        (<DetailCardButton icon="fa-check" text="Yes" key="yes" onClick={() => onDecision(goal, 'yes')} />),
+        (<DetailCardButton icon="fa-close text-red" text="No" key="no" onClick={() => onDecision(goal, 'no')} />),
+        (<DetailCardButton icon="fa-check text-green" text="Yes" key="yes" onClick={() => onDecision(goal, 'yes')} />),
       ]}
     />
   </div>
