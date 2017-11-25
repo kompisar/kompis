@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {AppContainer} from 'react-hot-loader';
-import Router from 'react-router-dom/HashRouter';
+import HashRouter from 'react-router-dom/HashRouter';
 import Route from 'react-router-dom/Route';
 import Switch from 'react-router-dom/Switch';
+import {HotKeys} from 'react-hotkeys';
 import Welcome from './screens/Welcome';
 import Phone from './screens/Phone';
 import AnalyzingScreen from './screens/AnalyzingScreen';
@@ -21,19 +22,33 @@ const viewportMetaTag = Object.assign(document.createElement('meta'), {
 });
 document.head.appendChild(viewportMetaTag);
 
+// We have to save router ref as HashRouter cannot
+// be given history={history} like abstract Router could
+let router = null;
+
+const globalKeyMap = {
+  'goToPhoneScreen': '0',
+};
+
+const globalKeyHandlers = {
+  'goToPhoneScreen': () => router.history.push('/phone'),
+};
+
 const render = () => {
   const comp = (
     <AppContainer>
-      <Router history={history}>
-        <Switch>
-          <Route exact path="/" component={Welcome} />
-          <Route exact path="/analyze" component={AnalyzingScreen} />
-          <Route exact path="/phone" component={Phone} />
-          <Route exact path="/result" component={Habits} />
-          <Route exact path="/spending/:id" component={Spending} />
-          <Route exact path="/detail/:id" component={SpendDetail} />
-        </Switch>
-      </Router>
+      <HashRouter ref={routerRef => router = routerRef}>
+        <HotKeys className="global-hotkey-area" keyMap={globalKeyMap} handlers={globalKeyHandlers}>
+          <Switch>
+            <Route exact path="/" component={Welcome} />
+            <Route exact path="/analyze" component={AnalyzingScreen} />
+            <Route exact path="/result" component={Habits} />
+            <Route exact path="/spending/:id" component={Spending} />
+            <Route exact path="/detail/:id" component={SpendDetail} />
+            <Route exact path="/phone" component={Phone} />
+          </Switch>
+        </HotKeys>
+      </HashRouter>
     </AppContainer>
   );
   ReactDOM.render(comp, root);
