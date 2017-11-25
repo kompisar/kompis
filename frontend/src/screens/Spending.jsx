@@ -7,6 +7,7 @@ import { formatEUR } from '../utils';
 import sortBy from 'lodash/sortBy';
 import reverse from 'lodash/reverse';
 import ArrowCTA from '../components/ArrowCTA';
+import { navigateOnboarding } from '../navigation';
 
 const SpendBar = withRouter(({ spend, total, history }) => {
   const { id, name, value } = spend;
@@ -32,7 +33,10 @@ class Spending extends React.Component {
         <div className="spendbar-ctr animated fadeIn" style={{ flex: 1 }}>
           {typeSpends.map(spend => <SpendBar spend={spend} total={total} key={spend.id} />)}
         </div>
-        {type === 'nonessential' ? <ArrowCTA text="Let's start saving" /> : null}
+        {type === 'nonessential' ?
+          <ArrowCTA text="Let's start saving" onClick={() => navigateOnboarding(this.props.history)} /> :
+          null
+        }
       </Box>
     );
   }
