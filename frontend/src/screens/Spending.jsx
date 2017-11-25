@@ -30,6 +30,7 @@ class Spending extends React.Component {
 
     return (
       <Box auto className={`bg-${color}-logo-light`} flex column>
+        <div className="spending-text">{title}</div>
         <div className="spendbar-ctr animated fadeIn" style={{ flex: 1 }}>
           {typeSpends.map(spend => <SpendBar spend={spend} total={total} key={spend.id} />)}
         </div>
