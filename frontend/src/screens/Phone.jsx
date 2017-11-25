@@ -1,4 +1,5 @@
 import React from 'react';
+import {HotKeys} from 'react-hotkeys';
 import {Flex, Box} from 'reflexbox'
 import {ToastContainer, toast} from 'react-toastify';
 import Transition from 'react-transition-group/Transition';
@@ -18,27 +19,37 @@ const ZoomInAndOut = ({children, position, ...props}) => (
   </Transition>
 );
 
+const keyMap = {
+  'showDemo1': '1',
+};
+
+const iosToast = (message) => (
+  <div>
+    <Flex>
+      <Box w={1 / 2} style={{textAlign: 'left'}}>Kompis</Box>
+      <Box w={1 / 2} style={{textAlign: 'right'}}>now</Box>
+    </Flex>
+    <div style={{marginTop: '2vh'}}>
+      {message}
+    </div>
+  </div>
+);
+
 export default class Phone extends React.Component {
 
   notify = () => {
     toast(
-      <div>
-        <Flex>
-          <Box w={1 / 2} style={{textAlign: 'left'}}>Kompis</Box>
-          <Box w={1 / 2} style={{textAlign: 'right'}}>now</Box>
-        </Flex>
-        <div style={{marginTop: '2vh'}}>
-          You have brought beer with $7.8 tonight, want to save that much?
-        </div>
-      </div>,
+      iosToast('You have brought beer with $7.8 tonight, want to save that much?'),
       {closeButton: false}
     )
   };
 
   render() {
+    const handlers = {
+      'showDemo1': this.notify,
+    };
     return (
-      <main className="lock-screen-bg">
-        <button onClick={this.notify}>DEMO 1</button>
+      <HotKeys keyMap={keyMap} handlers={handlers} className="lock-screen-bg">
         <ToastContainer
           position="top-center"
           autoClose={9999999999999}
@@ -46,7 +57,7 @@ export default class Phone extends React.Component {
           newestOnTop={false}
           transition={ZoomInAndOut}
         />
-      </main>
+      </HotKeys>
     );
   }
 
