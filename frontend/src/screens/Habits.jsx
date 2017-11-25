@@ -11,7 +11,7 @@ import KompisBars from '../components/KompisBars';
 
 class HabitBox extends React.Component {
   render() {
-    const { type, explode, history } = this.props;
+    const { type, explode } = this.props;
     const color = typeColors[type];
     const title = typeTitles[type];
     const typeSpends = spends.filter(s => s.type === this.props.type);
@@ -41,6 +41,7 @@ class HabitsScreen extends React.Component {
   }
 
   render() {
+    const { history } = this.props;
     const clickHandler = () => {
       this.setState({ explode: true });
       setTimeout(() => history.push(`/spending/nonessential`), 300);
