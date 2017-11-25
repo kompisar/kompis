@@ -1,0 +1,39 @@
+@detail-card-border-radius: 0.5em;
+
+.detail-card {
+  background: #fff;
+  color: @kompis-dark;
+  margin: 1em;
+  border-radius: @detail-card-border-radius;
+  box-shadow: 0 2px 16px rgba(176, 168, 198, 0.5);
+  .image {
+    height: 200px;
+    background-size: cover;
+    background-position: center center;
+    border-radius: @detail-card-border-radius @detail-card-border-radius 0 0;
+  }
+  .detail-card-main {
+    margin: 1.5em;
+  }
+  .title {
+    font-family: @kompis-title-font;
+    font-size: 14pt;
+    text-transform: uppercase;
+  }
+  .amount {
+    font-size: 40pt;
+  }
+  .detail-card-actions {
+    background: #F3F1F9;
+    display: flex;
+    border-radius: 0 0 @detail-card-border-radius @detail-card-border-radius;
+    button {
+      flex: 1;
+      font: 20pt @kompis-sans-font;
+      padding: @detail-card-border-radius;
+      -webkit-appearance: none;
+      border: none;
+      background: none;
+    }
+  }
+}

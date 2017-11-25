@@ -10,6 +10,7 @@ import AnalyzingScreen from './screens/AnalyzingScreen';
 import Habits from './screens/Habits';
 import './styles/style.less';
 import Spending from './screens/Spending';
+import SpendDetail from './screens/SpendDetail';
 
 
 const root = Object.assign(document.createElement('div'), {id: 'root'});
@@ -30,6 +31,7 @@ const render = () => {
           <Route exact path="/phone" component={Phone} />
           <Route exact path="/result" component={Habits} />
           <Route exact path="/spending/:id" component={Spending} />
+          <Route exact path="/detail/:id" component={SpendDetail} />
         </Switch>
       </Router>
     </AppContainer>
