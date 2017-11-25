@@ -13,6 +13,7 @@ import SpendDetail from './screens/onboarding/SpendDetail';
 import Phone from './screens/Phone';
 import Goals from './screens/onboarding/Goals';
 import OnboardingDone from './screens/onboarding/OnboardingDone';
+import OverviewScreen from './screens/OverviewScreen';
 
 // We have to save router ref as HashRouter cannot
 // be given history={history} like abstract Router could
@@ -45,6 +46,7 @@ class App extends React.Component {
             <Route exact path="/phone" component={Phone} />
             <Route exact path="/onboard-goals" component={Goals} />
             <Route exact path="/onboarding-done" component={OnboardingDone} />
+            <Route exact path="/overview" component={OverviewScreen} />
           </Switch>
         </HotKeys>
       </HashRouter>

@@ -3,9 +3,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const navItems = [
-  { to: '/', id: 'overview', text: 'Overview' },
-  { to: '/', id: 'budget', text: 'Budget' },
-  { to: '/', id: 'ghouls', text: 'Ghouls' },
+  { to: '/overview', id: 'overview', text: 'Overview' },
+  { to: '/budget', id: 'budget', text: 'Budget' },
+  { to: '/goals', id: 'ghouls', text: 'Ghouls' },
 ];
 
 const MainNav = ({ active }) => (
