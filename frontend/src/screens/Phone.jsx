@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 import {HotKeys} from 'react-hotkeys';
 import {Flex, Box} from 'reflexbox'
 import {ToastContainer, toast} from 'react-toastify';
@@ -35,7 +36,7 @@ const iosToast = (message) => (
   </div>
 );
 
-export default class Phone extends React.Component {
+class Phone extends React.Component {
 
   notify = () => {
     toast(
@@ -62,3 +63,7 @@ export default class Phone extends React.Component {
   }
 
 }
+
+const PhoneScreen = withRouter(({history}) => <Phone />);
+
+export default PhoneScreen;

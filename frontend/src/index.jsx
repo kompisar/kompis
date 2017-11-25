@@ -5,8 +5,9 @@ import Router from 'react-router-dom/HashRouter';
 import Route from 'react-router-dom/Route';
 import Switch from 'react-router-dom/Switch';
 import Welcome from './screens/Welcome';
-import './styles/style.less';
+import Phone from './screens/Phone';
 import AnalyzingScreen from './screens/AnalyzingScreen';
+import './styles/style.less';
 
 
 const root = Object.assign(document.createElement('div'), {id: 'root'});
@@ -20,10 +21,11 @@ document.head.appendChild(viewportMetaTag);
 const render = () => {
   const comp = (
     <AppContainer>
-      <Router>
+      <Router history={history}>
         <Switch>
           <Route exact path="/" component={Welcome} />
           <Route exact path="/analyze" component={AnalyzingScreen} />
+          <Route exact path="/phone" component={Phone} />
         </Switch>
       </Router>
     </AppContainer>
