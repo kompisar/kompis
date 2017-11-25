@@ -4,6 +4,7 @@ import {HotKeys} from 'react-hotkeys';
 import {Flex, Box} from 'reflexbox'
 import {ToastContainer, toast} from 'react-toastify';
 import Transition from 'react-transition-group/Transition';
+import {formatEUR} from '../utils';
 import 'react-toastify/dist/ReactToastify.min.css';
 
 const ZoomInAndOut = ({children, position, ...props}) => (
@@ -47,12 +48,42 @@ const PhoneScreen = withRouter(({history}) => {
     'showDemo1': '1',
     'showDemo2': '2',
     'showDemo3': '3',
+    'showDemo4': '4',
   };
 
   const handlers = {
-    'showDemo1': () => createToast('You have spent $25.8 in bars 🍻 tonight. If you keep going, you will go over your leisure budget!', '/result'),
-    'showDemo2': () => createToast('🎉 PARTY 🎉 You spent $183.1 in bars and nightclubs yesterday! This affects your saving plan, should we retune it?', '/result'),
-    'showDemo3': () => createToast('🍲 Sees like you just had a nice dinner for $78.1, should we tune your retirement plan so you can have a dinner like this once every month?', '/result'),
+    'showDemo1': () => createToast(
+      <span>
+        You just spent {formatEUR(7)} in a bar 🍺
+        Have fun!
+        You can enjoy 4 more drinks tonight.
+      </span>,
+      '/result'
+    ),
+    'showDemo2': () => createToast(
+      <span>
+        You have spent {formatEUR(29)} in bars 🍻 tonight.
+        If you keep going, you'll go over your non-essential budget! 📉
+      </span>,
+      '/result'
+    ),
+    'showDemo3': () => createToast(
+      <span>
+        🎉 PARTY! 🎉
+        Yesterday you spent {formatEUR(183.1)} in bars!
+        Hope you are feeling alright 🙈 😇
+        This affects your saving plan though, should we retune it?
+      </span>,
+      '/result'
+    ),
+    'showDemo4': () => createToast(
+      <span>
+        Sees like you just had a dinner for {formatEUR(48.1)},
+        should we tune your retirement plan so you can have
+        such a dinner once every month? 🍲 🍲 🍲
+      </span>,
+      '/result'
+    ),
   };
 
   return (
