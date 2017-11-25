@@ -3,6 +3,7 @@ import {withRouter} from 'react-router-dom';
 import {Flex, Box} from 'reflexbox';
 import Rheostat from 'rheostat';
 import {formatEUR} from '../utils';
+import MainNav from '../components/MainNav';
 
 class BudgetBox extends React.Component {
 
@@ -51,10 +52,13 @@ class BudgetBox extends React.Component {
 class BudgetScreen extends React.Component {
   render() {
     return (
-      <Flex flex auto column align="center" justify="center">
-        <BudgetBox title="Eating Out" />
-        <BudgetBox title="Movies" />
-        <BudgetBox title="Shopping" />
+      <Flex flex auto column>
+        <MainNav active="budget" />
+        <Box auto flex column align="center" justify="center">
+          <BudgetBox title="Eating Out" />
+          <BudgetBox title="Movies" />
+          <BudgetBox title="Shopping" />
+        </Box>
       </Flex>
     );
   }
