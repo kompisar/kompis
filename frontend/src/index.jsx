@@ -14,6 +14,7 @@ import SpendDetail from './screens/SpendDetail';
 import Phone from './screens/Phone';
 import './styles/style.less';
 import Goals from './screens/Goals';
+import OnboardingDone from './screens/OnboardingDone';
 
 
 const root = Object.assign(document.createElement('div'), {id: 'root'});
@@ -50,6 +51,7 @@ const render = () => {
             <Route exact path="/detail/:id" component={SpendDetail} />
             <Route exact path="/phone" component={Phone} />
             <Route exact path="/goals" component={Goals} />
+            <Route exact path="/onboarding-done" component={OnboardingDone} />
           </Switch>
         </HotKeys>
       </HashRouter>
