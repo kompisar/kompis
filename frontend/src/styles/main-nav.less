@@ -1,0 +1,18 @@
+.main-nav {
+  display: flex;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(176, 168, 198, 0.5);
+
+  > a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 1em;
+    border-bottom: 5px solid transparent;
+    color: #999999;
+    &.active {
+      border-bottom-color: @kompis-purple;
+      color: @kompis-dark;
+    }
+  }
+}
