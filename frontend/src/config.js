@@ -1,4 +1,6 @@
 import sample from 'lodash/sample';
+import kebabCase from 'lodash/kebabCase';
+import deburr from 'lodash/deburr';
 import firstNames from './data/firstNames';
 import lastNames from './data/lastNames';
 import random from 'lodash/random';
@@ -39,3 +41,10 @@ export const spends = [
     value: monthlyIncome * random(0.02, 0.1, true),
   },
 ];
+
+spends.forEach((spend) => {
+  if (!spend.id) {
+    // eslint-disable-next-line no-param-reassign
+    spend.id = kebabCase(deburr(spend.name));
+  }
+});
