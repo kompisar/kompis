@@ -20,50 +20,50 @@ const ZoomInAndOut = ({children, position, ...props}) => (
   </Transition>
 );
 
-const keyMap = {
-  'showDemo1': '1',
-};
+const PhoneScreen = withRouter(({history}) => {
 
-const iosToast = (message) => (
-  <div>
-    <Flex>
-      <Box w={1 / 2} style={{textAlign: 'left'}}>Kompis</Box>
-      <Box w={1 / 2} style={{textAlign: 'right'}}>now</Box>
-    </Flex>
-    <div style={{marginTop: '2vh'}}>
-      {message}
-    </div>
-  </div>
-);
-
-class Phone extends React.Component {
-
-  notify = () => {
+  const createToast = (message, location) => {
     toast(
-      iosToast('You have brought beer with $7.8 tonight, want to save that much?'),
-      {closeButton: false}
+      (
+        <div>
+          <Flex>
+            <Box w={1 / 2} style={{textAlign: 'left'}}>Kompis</Box>
+            <Box w={1 / 2} style={{textAlign: 'right'}}>now</Box>
+          </Flex>
+          <div style={{marginTop: '2vh'}}>
+            {message}
+          </div>
+        </div>
+      ),
+      {
+        closeButton: false,
+        onClose:
+          (childrenProps) => history.push(location)
+      }
     )
   };
 
-  render() {
-    const handlers = {
-      'showDemo1': this.notify,
-    };
-    return (
-      <HotKeys keyMap={keyMap} handlers={handlers} className="lock-screen-bg">
-        <ToastContainer
-          position="top-center"
-          autoClose={9999999999999}
-          hideProgressBar={true}
-          newestOnTop={false}
-          transition={ZoomInAndOut}
-        />
-      </HotKeys>
-    );
-  }
+  const keyMap = {
+    'showDemo1': '1',
+    'showDemo2': '2',
+  };
 
-}
+  const handlers = {
+    'showDemo1': () => createToast('You have brought beer for $15.8 tonight, want to save that much?', '/result'),
+    'showDemo2': () => createToast('You had a nice dinner for $78.1, should we tune your retirement savings so you can have a dinner like this once every month?', '/result'),
+  };
 
-const PhoneScreen = withRouter(({history}) => <Phone />);
+  return (
+    <HotKeys keyMap={keyMap} handlers={handlers} className="lock-screen-bg">
+      <ToastContainer
+        position="top-center"
+        autoClose={9999999999999}
+        hideProgressBar={true}
+        newestOnTop={false}
+        transition={ZoomInAndOut}
+      />
+    </HotKeys>
+  );
+});
 
 export default PhoneScreen;
