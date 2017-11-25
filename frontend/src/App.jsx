@@ -1,6 +1,5 @@
 import React from 'react';
 import { Menu } from 'semantic-ui-react';
-import animatecss from 'animate.css';
 
 export default class App extends React.Component {
   render() {
