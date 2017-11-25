@@ -1,11 +1,11 @@
 import React from 'react';
 import { Flex } from 'reflexbox';
-import { userFirstName } from '../config';
+import { userFirstName } from '../../config';
 import { withRouter } from 'react-router-dom';
 import CircularProgressbar from 'react-circular-progressbar';
 import { sample, truncate } from 'lodash';
-import payees from '../data/payees';
-import KompisBars from '../components/KompisBars';
+import payees from '../../data/payees';
+import KompisBars from '../../components/KompisBars';
 
 
 class AnalyzingScreen extends React.Component {

@@ -2,10 +2,10 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Box } from 'reflexbox';
-import { spends } from '../config';
-import { typeColors } from '../consts';
-import { navigateOnboarding } from '../navigation';
-import DetailCard, { DetailCardButton } from '../components/DetailCard';
+import { spends } from '../../config';
+import { typeColors } from '../../consts';
+import { navigateOnboarding } from '../../navigation';
+import DetailCard, { DetailCardButton } from '../../components/DetailCard';
 
 
 const SpendDetailCard = ({ spend, onDecision }) => {

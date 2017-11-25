@@ -2,11 +2,11 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Box } from 'reflexbox';
-import { spends } from '../config';
-import { formatEUR } from '../utils';
-import { typeColors, typeTitles } from '../consts';
-import Backbloder from '../components/Backploder';
-import ArrowCTA from '../components/ArrowCTA';
+import { spends } from '../../config';
+import { formatEUR } from '../../utils';
+import { typeColors, typeTitles } from '../../consts';
+import Backbloder from '../../components/Backploder';
+import ArrowCTA from '../../components/ArrowCTA';
 
 class HabeebBox extends React.Component {
   constructor(props) {

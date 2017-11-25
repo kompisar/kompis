@@ -2,9 +2,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Box } from 'reflexbox';
-import Imploder from '../components/Imploder';
-import ArrowCTA from '../components/ArrowCTA';
-import ParticleVerse from '../components/Particleverse';
+import Imploder from '../../components/Imploder';
+import ArrowCTA from '../../components/ArrowCTA';
+import ParticleVerse from '../../components/Particleverse';
 
 
 class OnboardingDone extends React.Component {

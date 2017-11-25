@@ -2,9 +2,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Box } from 'reflexbox';
-import Imploder from '../components/Imploder';
-import goals from '../goals';
-import DetailCard, { DetailCardButton } from '../components/DetailCard';
+import Imploder from '../../components/Imploder';
+import goals from '../../goals';
+import DetailCard, { DetailCardButton } from '../../components/DetailCard';
 
 const GoalCardAndTitle = ({ goal, onDecision, fadeOut }) => (
   <div className={fadeOut ? 'animated-half-second fadeOut' : 'animated-half-second fadeIn'}>

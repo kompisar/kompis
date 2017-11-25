@@ -1,23 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {AppContainer} from 'react-hot-loader';
-import HashRouter from 'react-router-dom/HashRouter';
-import Route from 'react-router-dom/Route';
-import Switch from 'react-router-dom/Switch';
-import {HotKeys} from 'react-hotkeys';
-import Welcome from './screens/Welcome';
-import AnalyzingScreen from './screens/AnalyzingScreen';
-import Habits from './screens/Habits';
-import Budget from './screens/Budget';
-import Spending from './screens/Spending';
-import SpendDetail from './screens/SpendDetail';
-import Phone from './screens/Phone';
+import { AppContainer } from 'react-hot-loader';
 import './styles/style.less';
-import Goals from './screens/Goals';
-import OnboardingDone from './screens/OnboardingDone';
+import App from './App';
 
 
-const root = Object.assign(document.createElement('div'), {id: 'root'});
+const root = Object.assign(document.createElement('div'), { id: 'root' });
 document.body.appendChild(root);
 const viewportMetaTag = Object.assign(document.createElement('meta'), {
   name: 'viewport',
@@ -25,36 +13,10 @@ const viewportMetaTag = Object.assign(document.createElement('meta'), {
 });
 document.head.appendChild(viewportMetaTag);
 
-// We have to save router ref as HashRouter cannot
-// be given history={history} like abstract Router could
-let router = null;
-
-const globalKeyMap = {
-  'goToPhoneScreen': '0',
-};
-
-const globalKeyHandlers = {
-  'goToPhoneScreen': () => router.history.push('/phone'),
-};
-
 const render = () => {
   const comp = (
     <AppContainer>
-      <HashRouter ref={routerRef => router = routerRef}>
-        <HotKeys className="global-hotkey-area" keyMap={globalKeyMap} handlers={globalKeyHandlers}>
-          <Switch>
-            <Route exact path="/" component={Welcome} />
-            <Route exact path="/analyze" component={AnalyzingScreen} />
-            <Route exact path="/result" component={Habits} />
-            <Route exact path="/budget" component={Budget} />
-            <Route exact path="/spending/:id" component={Spending} />
-            <Route exact path="/detail/:id" component={SpendDetail} />
-            <Route exact path="/phone" component={Phone} />
-            <Route exact path="/goals" component={Goals} />
-            <Route exact path="/onboarding-done" component={OnboardingDone} />
-          </Switch>
-        </HotKeys>
-      </HashRouter>
+      <App />
     </AppContainer>
   );
   ReactDOM.render(comp, root);

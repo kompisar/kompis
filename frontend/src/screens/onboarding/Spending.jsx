@@ -1,13 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Box } from 'reflexbox';
-import { typeColors, typeTitles } from '../consts';
-import { spends } from '../config';
-import { formatEUR } from '../utils';
+import { typeColors, typeTitles } from '../../consts';
+import { spends } from '../../config';
+import { formatEUR } from '../../utils';
 import sortBy from 'lodash/sortBy';
 import reverse from 'lodash/reverse';
-import ArrowCTA from '../components/ArrowCTA';
-import { navigateOnboarding } from '../navigation';
+import ArrowCTA from '../../components/ArrowCTA';
+import { navigateOnboarding } from '../../navigation';
 
 const SpendBar = withRouter(({ spend, total, history }) => {
   const { id, name, value } = spend;
