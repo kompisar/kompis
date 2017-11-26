@@ -98,7 +98,7 @@ class GoalBars extends React.Component {
         <div style={{ 'margin-bottom': '15px' }}>{this.props.title}</div>
         <div style={{ position: 'absolute', width: '100%', height: '60%' }}>
           {this.state.months.map((m, i) => {
-            const percentage = (i / this.state.months.length) * 100;
+            const percentage = (i / this.state.months.length) * 100 - 10;
             return (
               <div key={m.month}
                 style={{ position: 'absolute', left: `${percentage + 5}%`, bottom: 0, height: '100%', transform: 'rotate(180deg)' }}>
