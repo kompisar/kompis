@@ -41,7 +41,7 @@ const ComparisonSlider = ({spend, average}) => {
 };
 
 
-const SpendDetailCard = ({spend, onDecision}) => {
+const SpendDetailCard = ({spend, fadeOut, onDecision}) => {
   const {
     value, image, name, type,
   } = spend;
@@ -52,8 +52,10 @@ const SpendDetailCard = ({spend, onDecision}) => {
       <div style={{marginTop: '20px'}}>
         <ComparisonSlider spend={value} average={150} />
       </div>);
-    actions.push(<DetailCardButton icon="fa-close text-red" text="No" key="no" onClick={() => onDecision(spend, 'no')} />);
-    actions.push(<DetailCardButton icon="fa-check text-green" text="Yes" key="yes" onClick={() => onDecision(spend, 'yes')} />);
+    actions.push(<DetailCardButton icon="fa-close text-red" text="No" key="no"
+                                   onClick={() => onDecision(spend, 'no')} />);
+    actions.push(<DetailCardButton icon="fa-check text-green" text="Yes" key="yes"
+                                   onClick={() => onDecision(spend, 'yes')} />);
   }
   return (
     <DetailCard
@@ -62,12 +64,21 @@ const SpendDetailCard = ({spend, onDecision}) => {
       title={name}
       body={body}
       actions={actions}
+      fadeOut={fadeOut}
     />
   );
 };
 
 
 class SpendDetailScreen extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      fadeOut: false,
+    };
+  }
+
   render() {
     const {id} = this.props.match.params;
     const spendObj = spends.find(s => s.id === id);
@@ -76,18 +87,26 @@ class SpendDetailScreen extends React.Component {
     }
     const color = typeColors[spendObj.type];
     return (
-      <Box auto className={`bg-${color}-logo-light`} style={{ paddingTop: '5em' }}>
+      <Box auto className={`bg-${color}-logo-light`} style={{paddingTop: '5em'}}>
         <div className="goal-overtext">
           Should we start saving from...
         </div>
-        <SpendDetailCard spend={spendObj} onDecision={this.handleDecision} />
+        <SpendDetailCard fadeOut={this.state.fadeOut} spend={spendObj} onDecision={this.handleDecision} />
       </Box>
     );
   }
 
   handleDecision = (spend, decision) => {
     spend.decision = decision; // Yolo immutability
-    navigateOnboarding(this.props.history);
+    this.setState(
+      {fadeOut: true},
+      () => {
+        setTimeout(() => {
+          navigateOnboarding(this.props.history);
+          this.setState({fadeOut: false});
+        }, 550);
+      },
+    );
   };
 }
 
