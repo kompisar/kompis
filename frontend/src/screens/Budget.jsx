@@ -35,6 +35,12 @@ class BudgetBox extends React.Component {
     };
   }
 
+  onValuesUpdated = (e) => {
+    this.setState({
+      budget: Object.assign({}, this.state.budget, {values: e.values}),
+    });
+  };
+
   render() {
     let containerClasses = "habit-box";
     if (this.state.actual.values[0] > this.state.budget.values[0]) {
@@ -53,7 +59,7 @@ class BudgetBox extends React.Component {
         <div className="amount-ctr" style={{position: 'relative'}}>
           <Rheostat {...this.state.projected} className="rheostat-projected" />
           <Rheostat {...this.state.actual} className="rheostat-actual" />
-          <Rheostat {...this.state.budget} className="rheostat-budget" />
+          <Rheostat {...this.state.budget} className="rheostat-budget" onValuesUpdated={this.onValuesUpdated}/>
         </div>
       </Box>
     );
