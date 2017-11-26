@@ -1,0 +1,45 @@
+.overview-screen {
+  .situation {
+    font-size: 17pt;
+  }
+  .situation-text {
+    margin: 0.75em;
+    margin-top: 0.5em;
+  }
+  .trackerino {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(176, 168, 198, 0.3);
+    padding: 1em;
+  }
+  .track-prog-container {
+    width: 30%;
+    margin: auto;
+  }
+  .monthable-chart {
+    margin-top: 0.25em;
+  }
+  .track-summary {
+    margin-top: 0.25em;
+    b {
+      color: @kompis-purple;
+    }
+  }
+}
+
+.monthable-chart {
+  .tick-line {
+    stroke: #ccc;
+    opacity: 0.5;
+  }
+  polyline {
+    stroke: @kompis-purple;
+    stroke-width: 1px;
+    fill: none;
+  }
+  text {
+    font-size: 4pt;
+    text-anchor: middle;
+    opacity: 0.5;
+  }
+}

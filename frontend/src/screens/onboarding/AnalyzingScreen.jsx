@@ -44,8 +44,10 @@ class AnalyzingScreen extends React.Component {
       content = (
         <div style={{ fontSize: '20pt' }}>
           <div style={{ margin: '1em' }}>Just a moment, taking a look at your spending habits...</div>
-          <CircularProgressbar percentage={Math.ceil(progress)} />
-          <div style={{ marginTop: '1em' }}>{truncate(lastPayee, 27)}</div>
+          <div style={{ width: '60vw', margin: 'auto' }}>
+            <CircularProgressbar percentage={Math.ceil(progress)} />
+          </div>
+          <div style={{ marginTop: '1em' }}>{truncate(lastPayee, 25)}</div>
         </div>
       );
     } else {
