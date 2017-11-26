@@ -1,10 +1,14 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   entry: [
     'react-hot-loader/patch',
     `${__dirname}/src/index.jsx`,
   ],
   output: {
-    publicPath: '/',
+    publicPath: (process.env.PUBLIC_PATH || '/'),
+    path: `${__dirname}/dist`,
+    filename: 'kompis.js',
   },
   module: {
     rules: [
@@ -32,4 +36,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  plugins: [
+    new HtmlWebpackPlugin(),
+  ],
 };
