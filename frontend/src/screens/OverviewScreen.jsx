@@ -5,6 +5,8 @@ import { withRouter } from 'react-router-dom';
 import MainNav from '../components/MainNav';
 import KompisBars from '../components/KompisBars';
 import CircularProgressbar from 'react-circular-progressbar';
+import goals from '../goals';
+import { startCase } from 'lodash';
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Nov', 'Dec'];
 
@@ -61,6 +63,15 @@ const OverviewScreen = withRouter(({ history }) => (
         <div className="track-summary">
           Spending is down by <b>30%</b> over 12 months
         </div>
+      </div>
+      <div className="goals-ctr">
+        <div className="title">Your goals</div>
+        {goals.filter((g) => g.decision === 'yes').map((g) => (
+          <div key={g.title} className="goal">
+            <i className="fa fa-circle statusphere green" />
+            {startCase(g.title)}
+          </div>
+        ))}
       </div>
     </Box>
   </Flex>
