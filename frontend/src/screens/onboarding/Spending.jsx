@@ -35,7 +35,10 @@ class Spending extends React.Component {
           {typeSpends.map(spend => <SpendBar spend={spend} total={total} key={spend.id} />)}
         </div>
         {type === 'nonessential' ?
-          <ArrowCTA text="Let's start saving" onClick={() => navigateOnboarding(this.props.history)} /> :
+          <ArrowCTA
+            text="Let's start saving"
+            classor="text-white"
+            onClick={() => navigateOnboarding(this.props.history)} /> :
           null
         }
       </Box>

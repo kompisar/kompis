@@ -17,7 +17,8 @@ class OnboardingDone extends React.Component {
           <Box className="inner animated fadeInUp">
             <i className="fa fa-check-circle" />
             <div className="title">All done!</div>
-            <div>I'll keep an eye on your finances in the background to make sure you're on track with your savings.
+            <div class="text">
+              I'll keep an eye on your finances in the background to make sure you're on track with your savings.
             </div>
           </Box>
         </Box>

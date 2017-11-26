@@ -3,13 +3,17 @@
   .inner {
     margin: 1em;
     font-size: 16pt;
-    color: darken(@kompis-green, 35%);
 
+    .title,
+    .text {
+      text-shadow: 0 3px 5px rgba(245, 244, 240, 0.5);
+    }
     .title {
       font-size: 32pt;
       padding-bottom: .5em;
     }
     i {
+      color: @kompis-green;
       font-size: 80pt;
     }
   }
