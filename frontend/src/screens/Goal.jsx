@@ -101,16 +101,16 @@ class GoalBars extends React.Component {
             const percentage = (i / this.state.months.length) * 100;
             return (
               <div key={m.month}
-                style={{ position: 'absolute', left: `${percentage + 5}%`, bottom: 0, height: '100%' }}>
+                style={{ position: 'absolute', left: `${percentage + 5}%`, bottom: 0, height: '100%', transform: 'rotate(180deg)' }}>
+                <div style={{ color: 'black', position: 'absolute', left: '-5px', top: '-20px', transform: 'rotate(180deg)' }}>{this.monthToMon(m.month)}</div>
                 <Rheostat {...m}
                   orientation="vertical"
                   disabled
                   style={{ background: 'transparent' }} />
-                <div style={{ color: 'black', position: 'absolute', left: '-5px', bottom: '-20px' }}>{this.monthToMon(m.month)}</div>
               </div>
             );
           })}
-          <div style={{ position: 'absolute', left: '50%', right: '50%', height: '100%' }}>
+          <div style={{ position: 'absolute', left: '50%', right: '50%', height: '100%'  }}>
             <Rheostat min={this.state.min} max={this.state.max} value={500} orientation="vertical"
               onValuesUpdated={(r) => {
                 const value = r.values[0];
