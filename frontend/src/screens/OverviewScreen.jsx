@@ -1,16 +1,17 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
-import { Box, Flex } from 'reflexbox';
-import { withRouter } from 'react-router-dom';
+import {Box, Flex} from 'reflexbox';
+import {withRouter} from 'react-router-dom';
 import MainNav from '../components/MainNav';
 import KompisBars from '../components/KompisBars';
 import CircularProgressbar from 'react-circular-progressbar';
 import goals from '../goals';
-import { startCase } from 'lodash';
+import {startCase} from 'lodash';
+import take from 'lodash/take';
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Nov', 'Dec'];
 
-const MonthableChart = ({ yValues }) => {
+const MonthableChart = ({yValues}) => {
   const labels = [];
   const polyPoints = [];
   const currentMonth = (new Date().getMonth());
@@ -35,13 +36,13 @@ const MonthableChart = ({ yValues }) => {
   );
 };
 
-const OverviewScreen = withRouter(({ history }) => (
+const OverviewScreen = withRouter(({history}) => (
   <Flex flex auto column className="bg-white overview-screen">
     <MainNav active="overview" />
 
-    <Box style={{ margin: '1em', textAlign: 'center' }}>
+    <Box style={{margin: '1em', textAlign: 'center'}}>
       <div className="situation">
-        <KompisBars style={{ width: '25vw', display: 'block', margin: 'auto' }} />
+        <KompisBars style={{width: '25vw', display: 'block', margin: 'auto'}} />
         <div className="situation-text">
           Well done!<br />
           You are staying under budget.
@@ -66,7 +67,7 @@ const OverviewScreen = withRouter(({ history }) => (
       </div>
       <div className="goals-ctr">
         <div className="title">Your goals</div>
-        {goals.filter((g) => g.decision === 'yes').map((g) => (
+        {take(goals, 2).map((g) => (
           <div key={g.title} className="goal">
             <i className="fa fa-circle statusphere green" />
             {startCase(g.title)}
