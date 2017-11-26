@@ -55,7 +55,7 @@ export const spends = [
     name: 'Money Tucked Under A Pillow',
     value: monthlyIncome * random(0.02, 0.1, true),
   },
-].filter((spend) => spend.value > 0);
+].filter(spend => spend.value > 0);
 
 spends.forEach((spend) => {
   if (!spend.id) {
