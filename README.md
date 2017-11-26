@@ -1,19 +1,8 @@
-# GOLD-JACK
+# Kompis
 
-GOLD-JACK is the one stop money service
+Your friendly money management AI – a Junction 2017 hack
 
 ## Development Setup
-
-### Backend
-
-```bash
-cd backend
-nvm use 8                   # or use Node 8+ in another way
-npm install --global yarn   # if you don't have yarn
-yarn
-yarn start
-open http://127.0.0.1:3000/
-```
 
 ### Frontend
 
