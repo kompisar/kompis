@@ -2,8 +2,9 @@ import React from 'react';
 import {withRouter} from 'react-router-dom';
 import {Flex, Box} from 'reflexbox';
 import Rheostat from 'rheostat';
-import {formatEUR} from '../utils';
 import MainNav from '../components/MainNav';
+import KompisBars from '../components/KompisBars';
+import {formatEUR} from '../utils';
 
 class BudgetBox extends React.Component {
 
@@ -54,10 +55,23 @@ class BudgetScreen extends React.Component {
     return (
       <Flex flex auto column>
         <MainNav active="budget" />
+        <Box style={{
+          textAlign: 'center',
+          fontSize: '16pt',
+          paddingTop: '10pt',
+          marginLeft: '15%',
+          width: '70%',
+          marginBottom: '-30pt'
+        }}>
+          <KompisBars style={{width: '20vw', display: 'block', margin: 'auto'}} />
+          <div style={{marginTop: '5pt'}}>
+            You are on track for this month but you should slow down your shopping spree.
+          </div>
+        </Box>
         <Box auto flex column align="center" justify="center">
+          <BudgetBox title="Shopping" />
           <BudgetBox title="Eating Out" />
           <BudgetBox title="Movies" />
-          <BudgetBox title="Shopping" />
         </Box>
       </Flex>
     );
