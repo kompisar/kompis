@@ -5,35 +5,45 @@ import Rheostat from 'rheostat';
 import MainNav from '../components/MainNav';
 import KompisBars from '../components/KompisBars';
 import {formatEUR} from '../utils';
+import {spends} from '../config';
+import sortBy from 'lodash/sortBy';
+import reverse from 'lodash/reverse';
+import take from 'lodash/take';
 
 class BudgetBox extends React.Component {
 
   constructor(props) {
     super(props);
+    const budget = (props.spend.name === 'Shopping') ? props.spend.value - 43 : props.spend.value + 63;
+    const max = Math.max(budget, props.spend.value);
     this.state = {
       projected: {
         min: 0,
-        max: 100,
-        values: [35]
+        max: max,
+        values: [max - 41]
       },
       actual: {
         min: 0,
-        max: 100,
-        values: [25]
+        max: max,
+        values: [props.spend.value]
       },
       budget: {
         min: 0,
-        max: 100,
-        values: [100]
+        max: max,
+        values: [budget]
       },
     };
   }
 
   render() {
+    let containerClasses = "habit-box";
+    if (this.state.actual.values[0] > this.state.budget.values[0]) {
+      containerClasses = `${containerClasses} budget-warning`
+    }
     return (
-      <Box style={{width: '80%'}} className="habit-box">
+      <Box style={{width: '80%'}} className={containerClasses}>
         <Flex>
-          <Box auto className="title">{this.props.title}</Box>
+          <Box auto className="title">{this.props.spend.name}</Box>
           <Box>
             <span className="budget-actual-value">{formatEUR(this.state.actual.values[0])}</span>
             /
@@ -52,6 +62,9 @@ class BudgetBox extends React.Component {
 
 class BudgetScreen extends React.Component {
   render() {
+
+    const typeSpends = take(reverse(sortBy(spends.filter(s => s.type === 'nonessential'), 'value')), 3);
+
     return (
       <Flex flex auto column>
         <MainNav active="budget" />
@@ -69,9 +82,9 @@ class BudgetScreen extends React.Component {
           </div>
         </Box>
         <Box auto flex column align="center" justify="center">
-          <BudgetBox title="Shopping" />
-          <BudgetBox title="Eating Out" />
-          <BudgetBox title="Movies" />
+          {typeSpends.map(spend => (
+            <BudgetBox spend={spend} key={spend.id} />
+          ))}
         </Box>
       </Flex>
     );
