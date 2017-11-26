@@ -6,11 +6,13 @@ import KompisBars from '../../components/KompisBars';
 
 const WelcomeScreen = withRouter(({ history }) => (
   <Flex flex auto align="center" justify="center" column className="bg-white-logo-dark animated fadeIn" onClick={() => history.push('/analyze')}>
-    <div style={{ textAlign: 'center', fontSize: '48pt' }}>
+    <div style={{ textAlign: 'center', fontSize: '32pt' }}>
       <KompisBars style={{ width: '35vw', display: 'block', margin: 'auto' }} />
-      Welcome
-      <br />
-      {userFirstName}!
+      <div style={{marginTop: '5vw'}}>
+        Nice to meet you,
+        <br />
+        {userFirstName}
+      </div>
     </div>
   </Flex>
 ));
