@@ -63,7 +63,7 @@ class BudgetScreen extends React.Component {
           width: '70%',
           marginBottom: '-30pt'
         }}>
-          <KompisBars style={{width: '20vw', display: 'block', margin: 'auto'}} />
+          <KompisBars style={{width: '25vw', display: 'block', margin: 'auto'}} />
           <div style={{marginTop: '5pt'}}>
             You are on track for this month but you should slow down your shopping spree.
           </div>
