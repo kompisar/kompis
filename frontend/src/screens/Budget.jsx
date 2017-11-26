@@ -51,9 +51,9 @@ class BudgetBox extends React.Component {
           </Box>
         </Flex>
         <div className="amount-ctr" style={{position: 'relative'}}>
-          <Rheostat {...this.state.projected} className="rheostat-projected" disabled />
-          <Rheostat {...this.state.actual} className="rheostat-actual" disabled />
-          <Rheostat {...this.state.budget} className="rheostat-budget" disabled />
+          <Rheostat {...this.state.projected} className="rheostat-projected" />
+          <Rheostat {...this.state.actual} className="rheostat-actual" />
+          <Rheostat {...this.state.budget} className="rheostat-budget" />
         </div>
       </Box>
     );
