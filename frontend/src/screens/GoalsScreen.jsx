@@ -2,14 +2,13 @@ import React from 'react';
 import { Box, Flex } from 'reflexbox';
 import { withRouter } from 'react-router-dom';
 import MainNav from '../components/MainNav';
-import doot from '../img/doot.gif';
+import construct from '../img/construt.gif';
 
 const GoalsScreen = withRouter(({ history }) => (
-  <Flex flex auto column className="bg-dark">
+  <Flex flex auto column className="bg-white">
     <MainNav active="goals" />
     <Box style={{ margin: '2em', textAlign: 'center' }}>
-      <p>ghouls and skullingtons???</p>
-      <img src={doot} style={{ width: '100%' }} />
+      <img src={construct} style={{ margin: 'auto', maxWidth: '60%' }} />
     </Box>
   </Flex>
 ));

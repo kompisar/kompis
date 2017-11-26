@@ -16,6 +16,7 @@ import OnboardingDone from './screens/onboarding/OnboardingDone';
 import OverviewScreen from './screens/OverviewScreen';
 import GoalsScreen from './screens/GoalsScreen';
 import Goal from './screens/Goal';
+import LauncherScreen from './screens/Launcher';
 
 
 // We have to save router ref as HashRouter cannot
@@ -40,7 +41,8 @@ class App extends React.Component {
       >
         <HotKeys className="global-hotkey-area" keyMap={globalKeyMap} handlers={globalKeyHandlers}>
           <Switch>
-            <Route exact path="/" component={Welcome} />
+            <Route exact path="/" component={LauncherScreen} />
+            <Route exact path="/welcome" component={Welcome} />
             <Route exact path="/analyze" component={AnalyzingScreen} />
             <Route exact path="/result" component={Habits} />
             <Route exact path="/budget" component={Budget} />
