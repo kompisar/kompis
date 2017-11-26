@@ -6,6 +6,7 @@ import Rheostat from 'rheostat';
 class GoalBars extends React.Component {
   constructor(props) {
     super(props);
+    const value = 500;
     this.state = {
       min: 0,
       max: 1000,
@@ -13,26 +14,68 @@ class GoalBars extends React.Component {
         {
           month: 'november',
           min: 0,
-          max: 500,
+          max: value,
           values: [35],
         },
         {
           month: 'december',
           min: 0,
-          max: 500,
+          max: value,
           values: [85],
         },
         {
           month: 'january',
           min: 0,
-          max: 500,
+          max: value,
           values: [15],
         },
         {
           month: 'february',
           min: 0,
-          max: 500,
+          max: value,
           values: [10],
+        },
+        {
+          month: 'march',
+          min: 0,
+          max: value,
+          values: [125],
+        },
+        {
+          month: 'april',
+          min: 0,
+          max: value,
+          values: [700],
+        },
+        {
+          month: 'may',
+          min: 0,
+          max: value,
+          values: [25],
+        },
+        {
+          month: 'june',
+          min: 0,
+          max: value,
+          values: [100],
+        },
+        {
+          month: 'july',
+          min: 0,
+          max: value,
+          values: [800],
+        },
+        {
+          month: 'august',
+          min: 0,
+          max: value,
+          values: [600],
+        },
+        {
+          month: 'september',
+          min: 0,
+          max: value,
+          values: [500],
         },
       ],
     };
@@ -51,7 +94,7 @@ class GoalBars extends React.Component {
 
   render() {
     return (
-      <div style={{ position: 'relative', width: '80%', height: '40%' }} className="habit-box">
+      <div style={{ position: 'relative', width: '95%', height: '40%' }} className="habit-box">
         <div style={{ 'margin-bottom': '15px' }}>{this.props.title}</div>
         <div style={{ position: 'absolute', width: '100%', height: '60%' }}>
           {this.state.months.map((m, i) => {
