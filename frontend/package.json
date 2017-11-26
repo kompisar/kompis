@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server",
-    "dist": "webpack -p --progress",
-    "dist-gh-pages": "env PUBLIC_PATH=/kompis/ webpack -p --progress"
+    "dist": "env NODE_ENV=production webpack -p --progress"
   },
   "dependencies": {
     "animate.css": "^3.5.2",

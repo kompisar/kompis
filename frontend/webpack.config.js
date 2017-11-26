@@ -1,12 +1,14 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const IS_PROD = (process.env.NODE_ENV === 'production');
+
 module.exports = {
   entry: [
-    'react-hot-loader/patch',
+    (IS_PROD ? null : 'react-hot-loader/patch'),
     `${__dirname}/src/index.jsx`,
-  ],
+  ].filter(e => e),
   output: {
-    publicPath: (process.env.PUBLIC_PATH || '/'),
+    publicPath: (process.env.PUBLIC_PATH || (IS_PROD ? './' : '/')),
     path: `${__dirname}/dist`,
     filename: 'kompis.js',
   },
@@ -37,6 +39,6 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({ title: 'Kompis' }),
   ],
 };
