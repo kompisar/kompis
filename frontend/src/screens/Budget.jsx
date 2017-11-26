@@ -68,23 +68,26 @@ class BudgetScreen extends React.Component {
     return (
       <Flex flex auto column>
         <MainNav active="budget" />
-        <Box style={{
-          textAlign: 'center',
-          fontSize: '16pt',
-          paddingTop: '10pt',
-          marginLeft: '15%',
-          width: '70%',
-          marginBottom: '-30pt'
-        }}>
-          <KompisBars style={{width: '25vw', display: 'block', margin: 'auto'}} />
-          <div style={{marginTop: '5pt'}}>
-            You are on track for this month but you should slow down your shopping spree.
-          </div>
-        </Box>
         <Box auto flex column align="center" justify="center">
+          <Box style={{
+            textAlign: 'center',
+            fontSize: '16pt',
+            paddingTop: '5pt',
+            width: '70%',
+            marginBottom: '3pt',
+          }}>
+            <KompisBars style={{width: '25vw', display: 'block', margin: 'auto'}} />
+            <div style={{marginTop: '5pt'}}>
+              You are on track for this month but you should slow down your shopping spree.
+            </div>
+          </Box>
           {typeSpends.map(spend => (
             <BudgetBox spend={spend} key={spend.id} />
           ))}
+          <span style={{fontSize: '16pt'}}>
+            <i className="fa fa-plus text-purple" style={{paddingRight: '0.35em'}} />
+            Add to budget
+          </span>
         </Box>
       </Flex>
     );
